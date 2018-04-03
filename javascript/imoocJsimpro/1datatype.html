@@ -1,0 +1,171 @@
+<!-- 这个题目本来很好实现，可是就因为出题者所给数据导致问题百出。
+1、因为不考虑顺序，所以我使用了数组的splice来删除已经配对的元素，然后再在剩下的里面找相同类型的，可是splice删除后改变了数组，再返回时就成空的了。如此在显示arr1=___时空的，就是最后那块输出arr1和arr2的判断结果不是false。（本我可以放弃此处，但我想再探索一下）。为此我采用了两种方法解决。（1）因为splice方法做了删除然后返回的是所删的内容。就又定义了三个数组，并且我发现在最后使数组还原时，其不能使用直接赋值，要一个一个元素输进去或者push进去。(2)是首先将数组给一个中间变量数组，对其进行对比是否相似。
+我想这个程序或许是我使用splice不合适的原因吧，不知道还有什么更合适的方法。数组一处一变，到处都变了。
+2、出题者所给的数据中，最后三组就不是数组呀，如此无法在子函数中使用arr.length（语法错误）。如此我在出题者所给的js中加了数组判别函数，如果不是数组则直接输出此不是数组，判定不通过。 
+3、cases[5]中arr1数组[window]用json.stringify是无法解析的。这是个bug。没精力去解决了。置之-->
+
+
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+  </head>
+
+<body>
+    <script type="text/javascript">   
+        /*
+         * param1 Array 
+         * param2 Array
+         * return true or false
+         */
+       // 方法一 
+        function arraysSimilar(arr1, arr2){
+          var ARR1=new Array();
+          var ARR2=new Array();
+          var ARR3=new Array();
+          var n=0;
+         
+            if(arr1.length==arr2.length){
+             for(var i=arr1.length-1;i>=0;i--){
+                 for(var j=0;j<arr2.length;j++){
+                    if(typeof(arr2[j])==typeof(arr1[i])){
+                      ARR1[i]=arr1.splice(i,1);
+                      ARR2[j]=arr2.splice(j,1);
+                      ARR3[n]= ARR2[j];//没这句的话，出了循环就剩最后一个j值下班的ARR2了。
+                      n++;
+                    }
+                  }
+              }
+                if(arr1.length!=0){
+                  for(var m=0;m<ARR1.length;m++){
+                    arr1.push(ARR1[m]);
+                  }
+                  for(var m=0;m<ARR3.length;m++){
+                    arr2.push(ARR3[m]);
+                  }
+                  // arr1=ARR1;//不可用
+                  // arr2=ARR2;
+                  return false;
+                  
+                }else{
+                 for(var m=0;m<ARR1.length;m++){
+                    arr1.push(ARR1[m]);
+                  }
+                  for(var m=0;m<ARR3.length;m++){
+                    arr2.push(ARR3[m]);
+                  }
+                  return true;
+                }
+            }
+        }
+          // 方法二
+        // function arraysSimilar(arr1, arr2){
+        //   var ARR1=new Array();
+        //   var ARR2=new Array();
+         
+        // for(var n=0;n<arr1.length;n++){
+        //     ARR1[n]=arr1[n];
+        // }
+        // for(var m=0;m<arr1.length;m++){
+        //     ARR2[m]=arr2[m];
+        // }
+        //  // ARR1=arr1;这为何是不可以的呢？
+        //  // ARR2=arr2;
+        //     if(ARR1.length==ARR2.length){
+        //         for(var i=ARR1.length-1;i>=0;i--){
+        //             for(var j=0;j<ARR2.length;j++){
+        //                 if(typeof(ARR2[j])==typeof(ARR1[i])){
+        //                     ARR1.splice(i,1);
+        //                     ARR2.splice(j,1);
+        //                 }
+        //             }
+        //         }
+           
+        //         if(ARR1.length!=0){
+        //           return false;
+        //         }else{
+        //           return true;
+        //         }
+        //     }
+        // }  
+           
+        
+          
+
+          var result=function(){
+    //以下为多组测试数据
+            var cases=[{
+                    arr1:[1,true,null],
+                    arr2:[null,false,100],
+                    expect:true
+                },{
+                    arr1:[function(){},100],
+                    arr2:[100,{}],
+                    expect:false
+                },{
+                    arr1:[null,999],
+                    arr2:[{},444],
+                    expect:false
+                },{
+                    arr1:[window,1,true,new Date(),"hahaha",(function(){}),undefined],
+                    arr2:[undefined,(function(){}),"okokok",new Date(),false,2,window],
+                    expect:true
+                },{
+                    arr1:[new Date()],
+                    arr2:[{}],
+                    expect:false
+                },{
+                    arr1:[window],
+                    arr2:[{}],
+                    expect:false
+                },{
+                    arr1:[undefined,1],
+                    arr2:[null,2],
+                    expect:false
+                },{
+                    arr1:[new Object,new Object,new Object],
+                    arr2:[{},{},null],
+                    expect:false
+                },{
+                    arr1:null,
+                    arr2:null,
+                    expect:false
+                },{
+                    arr1:[],
+                    arr2:undefined,
+                    expect:false
+                },{
+                    arr1:"abc",
+                    arr2:"cba",
+                    expect:false
+                }];
+            
+            //数组判定方法
+            function isArray(arg){
+             return Object.prototype.toString.call(arg) === '[object Array]';
+          }
+          
+    //使用for循环, 通过arraysSimilar函数验证以上数据是否相似，如相似显示“通过”,否则"不通过",所以大家要完成arraysSimilar函数,具体要求，详见任务要求。    
+            for(var i=0;i<cases.length;i++){
+              if(!(isArray(cases[i].arr1)&&isArray(cases[i].arr2))){
+                 document.write("case"+(i+1)+"不是数组");
+                  return false;
+                  }else if(arraysSimilar(cases[i].arr1,cases[i].arr2)!==cases[i].expect) {
+                      
+                     
+                        document.write("不通过！case"+(i+1)+"不正确！arr1="+JSON.stringify(cases[i].arr1)+", arr2="+JSON.stringify(cases[i].arr2)+" 的判断结果不是"+cases[i].expect+'<br>');
+                      
+                        return false;
+                      } 
+                    
+           } 
+            return true;
+        }();
+    document.write('<br>'+"判定结果:"+(result?"通过":"不通过"));
+        
+
+    </script>
+    
+</body>
+</html>

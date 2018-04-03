@@ -1,0 +1,146 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%; }
+
+pre {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none; }
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+html, body, h1, h2, h3, h4, h5, th, td, p {
+  margin: 0;
+  padding: 0; }
+
+a {
+  cursor: pointer; }
+
+a:hover, a:visited, a:link {
+  text-decoration: none; }
+
+table {
+  border-collapse: initial; }
+
+button:disabled {
+  color: gray !important; }
+
+body {
+  overflow: hidden;
+  font-family: 'SourceHanSansCN', 'Microsoft Yahei', '微软雅黑', '宋体';
+  font-size: 14px;
+  color: #707070; }
+
+input, button, select {
+  outline: none; }
+
+table, th, td {
+  border-collapse: collapse;
+  border: 1px solid #ccc; }
+
+/* 清除布局浮动 */
+.clearfix:before, .clearfix:after {
+  display: block;
+  content: ''; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  zoom: 1; }
+
+.clear {
+  display: block;
+  visibility: hidden;
+  clear: both;
+  overflow: hidden;
+  width: 0;
+  height: 0; }
+
+/* ************************************************************************* */
+.contentWrapper main .mainContent .form-group .form-control {
+  border: 1px solid #ccc; }
+
+header {
+  width: 100%;
+  height: 60px;
+  background: #0f8af1; }
+
+.contentWrapper {
+  display: flex;
+  display: -webkit-flex;
+  height: 94.44444vh;
+  justify-content: center;
+  align-items: flex-start; }
+  .contentWrapper aside {
+    width: 279px;
+    height: 100%;
+    background: url("../images/menuback.png") 100% 100%; }
+    .contentWrapper aside h4 {
+      font-size: 16px;
+      font-weight: normal;
+      padding: 10px 30px;
+      color: #fff;
+      background: #002e6b; }
+    .contentWrapper aside a {
+      font-size: 12px;
+      color: #fff; }
+    .contentWrapper aside .zl_sublist {
+      padding: 10px 40px; }
+  .contentWrapper main {
+    width: 85.46875vw;
+    height: 100%;
+    background: #f1f9fc; }
+    .contentWrapper main .mainContent {
+      margin: 1.5625vw;
+      padding: 1.40625vw 5.625vw;
+      background: #fff; }
+      .contentWrapper main .mainContent .form-group {
+        display: inline-block;
+        margin-bottom: 1.85185vh; }
+        .contentWrapper main .mainContent .form-group label {
+          display: inline-block;
+          font-size: 0.72917vw;
+          width: 9.375vw;
+          margin-right: 1.19792vw;
+          text-align: right; }
+        .contentWrapper main .mainContent .form-group .form-control {
+          width: 11.97917vw;
+          height: 3.51852vh;
+          padding: 0 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px; }
+      .contentWrapper main .mainContent .zl_btn_group {
+        float: right; }
+        .contentWrapper main .mainContent .zl_btn_group button {
+          font-size: 0.83333vw;
+          width: 9.11458vw;
+          height: 2.60417vw;
+          margin-left: 1.19792vw;
+          color: #fff;
+          background: #0f8af1;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px; }
+      .contentWrapper main .mainContent .tableWrapper {
+        overflow: auto;
+        width: 100%;
+        height: 55.55556vh; }
+        .contentWrapper main .mainContent .tableWrapper table {
+          width: 100%; }
+          .contentWrapper main .mainContent .tableWrapper table th, .contentWrapper main .mainContent .tableWrapper table td {
+            padding: 0.52083vw; }

@@ -1,0 +1,42 @@
+<!-- 在css3中可以对一切指定颜色值得属性中指定transparent，background-color: transparent，border-color:transparent;color: transparent; 
+目前在Firefox、Sarari、Opera、Chrome中可用-->
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>transparent</title>
+<style>
+    body{
+    	background-color: pink;
+    }
+	div{
+		width；100%；
+		height:100px;
+		color:white;
+		font-size: 48px;
+		border:solid 3px yellow;
+	}
+	#div1{
+		background-color: transparent;
+		
+	}
+	#div2{
+		border-color:transparent;
+	}
+	#div3{
+		color: transparent;
+	}
+	#div4{
+		background-color: rgb(0,255,100);
+		color:rgb(255,255,255);
+		opacity: 0.5;
+	}
+</style>
+</head>
+<body>
+	<div id="div1">示例文字1</div>
+	<div id="div2">示例文字2</div>
+	<div id="div3">示例文字3</div>
+	
+</body>
+</html>

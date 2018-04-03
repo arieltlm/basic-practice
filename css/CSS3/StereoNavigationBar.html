@@ -1,0 +1,105 @@
+<!-- 1、制作导航圆角
+
+使用border-radius实现圆角
+2、制作导航立体风格
+
+使用box-shadow实现立体风格
+3、制作导航分隔线
+
+使用渐变与伪元素制作
+4、删除第一个和最后一个导航分隔线
+
+使用伪元素删除第一个和最后一个分隔线 -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>CSS制作立体导航</title>
+	<link rel="stylesheet" href="http://www.w3cplus.com/demo/css3/base.css">
+	<style>
+		body{
+		  background: #ebebeb;
+		}
+		.nav{
+		  width:560px;
+		  height: 50px;
+		  font:bold 0/50px Arial;
+		  text-align:center;
+		  margin:40px auto 0;
+	      background: #f65f57;
+		  /*制作圆*/
+		  border-radius:8px;
+          /*制作导航立体风格*/
+          box-shadow: 5px 5px 6px #000;
+		}
+		.nav a{
+		  display: inline-block;
+		  -webkit-transition: all 0.2s ease-in;
+		  -moz-transition: all 0.2s ease-in;
+		  -o-transition: all 0.2s ease-in;
+		  -ms-transition: all 0.2s ease-in;
+		  transition: all 0.2s ease-in;
+		}
+		.nav a:hover{
+		  -webkit-transform:rotate(10deg);
+		  -moz-transform:rotate(10deg);
+		  -o-transform:rotate(10deg);
+		  -ms-transform:rotate(10deg);
+		  transform:rotate(10deg);
+		}
+
+		.nav li{
+		  position:relative;
+		  display:inline-block;
+		  padding: 0 16px;
+		  font-size: 13px;
+		  text-shadow:1px 2px 4px rgba(0,0,0,.5);
+		  list-style: none outside none;	
+		}
+		/*使用伪元素制作导航列表项分隔线*/
+		/*方法一*/
+		/*.nav li:after{
+			content:'|';
+			display: inline-block;
+			position: relative;
+			top:0;
+			left:15px;
+		}*/
+		/*删除第一项和最后一项导航分隔线*/
+		/*.nav li:last-child:after{
+			display:none;
+		}*/
+		/*方法二*/
+		/*设置li的背景色，单纯背景色不能设置大小，但是线性变化就可以相当于背景图片了，可以进行大小设置了，所以设置为1pxX15px，在右边*/
+		.nav li{
+			background:linear-gradient(to bottom,#dd2926,#a82724,#dd2926) no-repeat right / 1px 15px;
+		}
+		
+        /*删除第一项和最后一项导航分隔线*/
+        .nav li:last-child{
+        	background:none;
+        }
+		
+		.nav a,
+		.nav a:hover{
+		  color:#fff;
+		  text-decoration: none;
+		}
+		
+		
+		
+	</style>
+</head>
+<body>
+	<ul class="nav">
+    	<li><a href="">Home</a></li>
+    	<li><a href="">About Me</a></li>
+    	<li><a href="">Portfolio</a></li>
+    	<li><a href="">Blog</a></li>
+    	<li><a href="">Resources</a></li>
+    	<li><a href="">Contact Me</a></li>
+	</ul>
+	
+	
+</body>
+</html>

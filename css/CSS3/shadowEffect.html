@@ -1,0 +1,48 @@
+<!--一个正常盒子阴影和两个圆角盒子阴影重合，阴影偏移值设的小一点-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>曲线阴影</title>
+<style>
+.box h3{
+  text-align:center;
+  position:relative;
+  top:80px;
+}
+.box {
+  width:70%;
+  height:200px;
+  background:#FFF;
+  margin:40px auto;
+}
+/*多个阴影可以用逗号隔开*/
+.effect{
+  position:relative;       
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+			box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+/*前后两个阴影加深阴影效果*/
+.effect::before, .effect::after{
+    content:"";
+	position:absolute; 
+	z-index:-1;/*使此盒子处于原盒子之下*/
+	-webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+	-moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+	box-shadow:0 0 20px rgba(0,0,0,0.8);
+	top:50%;/*上下左右下个值确定位置*/
+	bottom:0;
+	left:10px;
+	right:10px;
+	-moz-border-radius:100px / 10px;/*100px是水平的，10px是垂直的*/
+	border-radius:100px / 10px;
+}
+</style>
+</head>
+<body>
+  <div class="box effect">
+  <h3>Shadow Effect </h3>
+</div>
+</body>
+</html>

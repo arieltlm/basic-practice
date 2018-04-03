@@ -1,0 +1,26 @@
+<!-- 说明：
+    时钟；
+    主要是注意new Date()
+    time.getHours(),time.getMinutes(),time.getSeconds()方法的应用
+    setInterval(clock(),1); -->
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>定时器</title>
+  <script type="text/javascript">
+    var attime;
+    function clock(){
+      var time=new Date();
+      attime= time.getHours()+":"+time.getMinutes()+":"+time.getSeconds();
+      document.getElementById("clock").value = attime;
+    }
+    setInterval(clock(),1);
+  </script>
+</head>
+<body>
+<form>
+  <input type="text" id="clock" size="10"  />
+</form>
+</body>
+</html>

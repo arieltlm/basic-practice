@@ -1,0 +1,35 @@
+<!-- 说明：倒计时跳转页面加返回上一个页面。
+使用setTimeout函数。window.location.href="网址"；
+返回使用的window.history.back或者window.history.go(-1); -->
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>浏览器对象</title> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>   
+ </head>
+ <body>
+  <!--先编写好网页布局-->
+  <h3>操作成功</h3>
+  <span id="num"></span>秒后回到主页<br><span style="color:blue;cursor:pointer;" onclick="goback()">返回<span>
+ 
+  <script type="text/javascript"> 
+    var num=5;
+   //获取显示秒数的元素，通过定时器来更改秒数。
+   function numCount(){
+   document.getElementById('num').innerHTML=num;
+   num=num-1; 
+   i=setTimeout("numCount()",1000);
+   if(num==0){
+    clearInterval(i);
+    window.location.href="http://www.baidu.com";
+   }
+ }
+  numCount();
+   //通过window的location和history对象来控制网页的跳转。
+   function goback(){
+    window.history.back();
+   }
+ </script> 
+</body>
+</html>

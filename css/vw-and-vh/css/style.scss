@@ -1,0 +1,212 @@
+@charset 'utf-8';
+
+* {
+	-webkit-box-sizing: border-box; /* Safari */
+	-moz-box-sizing: border-box; /* Firefox */
+	box-sizing: border-box;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+pre {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: none;
+}
+
+ul, li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+html, body, h1, h2, h3, h4, h5, th, td, p {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	cursor: pointer;
+}
+
+a:hover, a:visited, a:link {
+	text-decoration: none;
+}
+
+table {
+	border-collapse: initial;
+}
+
+button:disabled {
+	color: gray !important;
+}
+
+body {
+	overflow: hidden;
+	font-family: 'SourceHanSansCN', 'Microsoft Yahei', '微软雅黑', '宋体';
+	font-size: 14px;
+	color: #707070;
+}
+
+input, button, select {
+	outline: none;
+}
+
+table, th, td {
+	border-collapse: collapse;
+	border: 1px solid #ccc;
+}
+
+/* 清除布局浮动 */
+.clearfix:before, .clearfix:after {
+	display: block;
+	content: '';
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.clearfix {
+	zoom: 1;
+}
+
+.clear {
+	display: block;
+	visibility: hidden;
+	clear: both;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+}
+
+/* ************************************************************************* */
+@function vw($px) {
+	@return ($px / 1920) * 100vw;
+}
+
+@function vh($px) {
+	@return ($px / 1080) * 100vh;
+}
+
+@mixin border-radius($w:5px) {
+	-webkit-border-radius: $w;
+	-moz-border-radius: $w;
+	border-radius: $w;
+}
+
+%bor {
+	border: 1px solid #ccc;
+}
+
+header {
+	width: 100%;
+	height: 60px;
+	background: #0f8af1;
+}
+
+.contentWrapper {
+	display: flex;
+	display: -webkit-flex;
+	height: vh(1020);
+	justify-content: center;
+	align-items: flex-start;
+
+	aside {
+		width: 279px;
+		height: 100%;
+		background: url('../images/menuback.png') 100% 100%;
+
+		h4 {
+			font-size: 16px;
+			font-weight: normal;
+			padding: 10px 30px;
+			color: #fff;
+			background: #002e6b;
+		}
+
+		a {
+			font-size: 12px;
+			color: #fff;
+		}
+
+		.zl_sublist {
+			padding: 10px 40px;
+		}
+
+	}
+
+	main {
+		width: vw(1641);
+		height: 100%;
+		background: #f1f9fc;
+
+		.mainContent {
+			margin: vw(30);
+			padding: vw(27) vw(108);
+			background: #fff;
+
+			.form-group {
+				display: inline-block;
+				margin-bottom: vh(20);
+
+				label {
+					display: inline-block;
+					font-size: vw(14);
+					width: vw(180);
+					margin-right: vw(23);
+					text-align: right;
+				}
+
+				.form-control {
+					width: vw(230);
+					height: vh(38);
+					padding: 0 5px;
+					@extend %bor;
+					@include border-radius;
+				}
+
+			}
+
+			.zl_btn_group {
+				float: right;
+
+				button {
+					font-size: vw(16);
+					width: vw(175);
+					height: vw(50);
+					margin-left: vw(23);
+					color: #fff;
+					background: #0f8af1;
+					@include border-radius;
+				}
+
+			}
+
+			.tableWrapper {
+				overflow: auto;
+				width: 100%;
+				height: vh(600);
+
+				table {
+					width: 100%;
+					// font-size: vw(14);
+
+					th, td {
+						padding: vw(10);
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}

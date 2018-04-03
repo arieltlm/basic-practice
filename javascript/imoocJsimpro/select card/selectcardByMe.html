@@ -1,0 +1,133 @@
+<!-- 说明:
+    此程序li和下面的div使用相对位置的位移偏移top:-3；实现重叠，使用z-index，用js控制其顺序呈现边框的合理显示。
+    在此需要注意，z-index只有当元素设置了position:absolute/relative/fixed时才起作用。
+    获取点击的li的下标时使用了闭包（这还是有一点没太掌握）。 -->
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>实践题 - 选项卡</title>
+    <style type="text/css">
+     /* CSS样式制作 */  
+     *{
+      margin:0;
+      padding: 0;
+      font-family: '微软雅黑';
+     }
+       .outer{
+          height: 400px;
+          width: 500px;
+          padding: 20px;
+          background-color: #EDF1F2;
+       }
+
+       li{
+        position: relative;
+        height: 20px;
+        width: 80px;
+        list-style: none;
+        display: inline-block;
+        border:1px solid black;
+        border-bottom:3px solid transparent;
+        text-align: center;
+        padding: 8px;
+        margin-left:5px;
+        background-color: #fff;
+        cursor:pointer;
+       }
+       .firstli,.lilive{
+        border-top:3px solid #79031C;
+        z-index: 2;
+       }
+       .nolive{
+        border-top: 1px solid black;
+        z-index: 1;
+       }
+       .contents{
+        position: relative;
+        height:200px;
+        width: 400px;
+        top:-3px;/*位置重叠，z-index控制其div在li下面呈现*/
+        background-color: #fff;
+        padding-top:6px;
+        padding-left:10px;
+        border:1px solid #123EC9;
+        border-top:3px solid #79031C;
+        z-index: 1;
+       }
+       .con{
+        display: none;
+       }
+       .con-first{
+        display: block;
+       }
+        p{
+          line-height: 2em;
+        }
+    </style>
+     <script type="text/javascript">
+         
+    // JS实现选项卡切换
+    window.onload=function(){
+      var lilive=document.getElementsByTagName("li");
+      var cons=document.getElementsByClassName("con");
+      for(var i=0;i<lilive.length;i++){
+        (function(num){//闭包
+            lilive[i].onclick=function(){
+                // alert(num);
+                for(var n=0;n<lilive.length;n++){
+
+                    if(n==num){
+                        lilive[num].className='lilive';
+                         cons[num].style.display='block';
+                    }else{
+                        lilive[n].className='nolive';
+                        cons[n].style.display='none';
+                    }
+                }
+
+            }
+        })(i);
+      }
+    
+      }
+    
+     
+    </script>
+</head>
+<body>
+<!-- HTML页面布局 -->
+<div class="outer">
+   <ul>
+    <li class="firstli">房产</li>
+    <li>家居</li>
+    <li>二手房</li>
+  </ul>
+  <div class="contents">
+    <div class="con con-first">
+      <p>275万购昌平邻铁三居 总价20万买一居</p>
+      <p>200万内购五环三居 140万安家东三环</p>
+      <p>北京首现零首付楼盘 53万购东5环50平</p>
+      <p>京楼盘直降5000 中信府 公园楼王现房</p>
+    </div>
+    <div class="con">
+      <p>40平出租屋大改造 美少女的混搭小窝</p>
+      <p>经典清新简欧爱家 90平老房焕发新生</p>
+      <p> 新中式的酷色温情 66平撞色活泼家居</p>
+      <p>瓷砖就像选好老婆 卫生间烟道的设计</p>
+    </div>
+    <div class="con">
+      <p>通州豪华3居260万 二环稀缺2居250w甩</p>
+      <p> 西3环通透2居290万 130万2居限量抢购</p>
+      <p>黄城根小学学区仅260万 121平70万抛!</p>
+      <p>独家别墅280万 苏州桥2居优惠价248万</p>
+    </div>
+  </div>
+</div>
+ 
+ 
+ 
+ 
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header>
+	</header>
+	<div class="contentWrapper">
+		<aside>
+			<ul>
+				<li>
+					<h4><span class="zl_h">第一部分</span><span class="zl_triangle zl_triangle_open"></span></h4>
+					<ul class="zl_sublist">
+						<li><a href="./index.html">资管产品资产量信息 </a></li>
+						<li><a href="#"> 资管产品资产收存量信息</a></li>
+						<li><a href="#">资管产品SPV投资信息</a></li>
+						<li><a href="#">资管产品资产负债信息</a></li>
+						<li><a href="#">资管产品债量信息</a></li>
+					</ul>
+				</li>
+				<li>
+					<h4><span class="zl_h">第二部分</span><span class="zl_triangle zl_triangle_close"></span></h4>
+					<ul class="zl_sublist">
+						<li><a href="#"> 资管产收益权存量信息</a></li>
+						<li><a href="#">资管产品投资流量信息</a></li>
+						<li><a href="#">资管产品资产负债信息</a></li>
+					</ul>
+				</li>
+				<li>
+					<h4><span class="zl_h">第三部分</span><span class="zl_triangle zl_triangle_close"></span></h4>
+					<ul class="zl_sublist">
+						<li><a href="#">资管产品权流量信息 </a></li>
+					</ul>
+				</li>
+				<li>
+					<h4><span class="zl_h">第四部分</span><span class="zl_triangle zl_triangle_close"></span></h4>
+					<ul class="zl_sublist">
+						<li><a href="#">资管产收益权流量信息 </a></li>
+					</ul>
+				</li>
+			</ul>
+		</aside>
+		<main>
+			<div class="mainContent">
+				<form class="form-inline clearfix">
+					<div class="form-group">
+						<label>数据日期</label>
+						<input type="text" class="form-control" id="zl_dataDate" name="zl_dataDate" placeholder="请填写日期">
+					</div>
+					<div class="form-group">
+						<label>金融机构编码</label>
+						<input type="text" class="form-control" id="zl_financialInstnCode" name="zl_financialInstnCode" placeholder="支持模糊查询">
+					</div>
+					<div class="form-group">
+						<label>内部机构号</label>
+						<input type="text" class="form-control" id="zl_insideCode" name="zl_insideCode" placeholder="支持模糊查询">
+					</div>
+					<!-- <br> -->
+					<div class="form-group">
+						<label>出让机构类型</label>
+						<input type="text" class="form-control" id="zl_sellInsType" name="zl_sellInsType" placeholder="支持模糊查询">
+					</div>
+					<div class="form-group">
+						<label>出让机构证件代码</label>
+						<input type="text" class="form-control" id="zl_sellInsCode" name="zl_sellInsCode" placeholder="支持模糊查询">
+					</div>
+					<div class="form-group">
+						<label>基准资产类型</label>
+						<select name="zl_benchmarkType" id="zl_benchmarkType" class="form-control">
+							<option value="" disabled selected>--请选择--</option>
+							<option value="1213131">1213131</option>
+							<option value="1213131">1213131</option>
+							<option value="1213131">1213131</option>
+							<option value="1213131">1213131</option>
+						</select>
+					</div>
+					<!-- <br> -->
+					<div class="form-group">
+						<label>出让机构基础资产出表标识</label>
+						<select name="zl_sellOutFlag" id="zl_sellStaFlag" class="form-control">
+							<option value="" disabled selected>--请选择--</option>
+							<option value="1213131">1213131</option>
+							<option value="1213131">1213131</option>
+							<option value="1213131">1213131</option>
+							<option value="1213131">1213131</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>出让机构基础资产回购标识</label>
+						<select name="zl_sellBackFlag" id="zl_sellBackFlag" class="form-control">
+							<option value="" disabled selected>--请选择--</option>
+							<option value="1213131">1213131</option>
+							<option value="1213131">1213131</option>
+							<option value="1213131">1213131</option>
+							<option value="1213131">1213131</option>
+						</select>
+					</div>
+					<br>
+					<div class="form-group zl_btn_group">
+						<button type="button" class="btn btn-primary"  id="zl_query">查询</button>
+						<button type="button" class="btn btn-primary"  id="zl_exportReport">导出报表</button>
+						<button type="button" class="btn btn-primary"  id="zl_importExcel">导入Excel</button>
+					</div>
+				</form>
+				<div class="tableWrapper">
+					<table>
+						<thead>
+							<tr>
+								<th><input type="checkbox" name="checks"></th>
+								<th>操作</th>
+								<th>金融机构编码</th>
+								<th>内部机构码</th>		
+								<th>出让机构类型</th>		
+								<th>出让机构证件代码</th>		
+								<th>基准资产类型</th>		
+								<th>出让机构基础资产出表标识</th>		
+								<th>出让机构基础资产回购标识</th>		
+								<th>基准资产类型0</th>		
+								<th>基准资产类型1</th>		
+						</thead>
+						<tbody>
+							<tr>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+							</tr>
+							<tr>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+							</tr>
+							<tr>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+							</tr>
+							<tr>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+							</tr>
+							<tr>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+							</tr>
+							<tr>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+							</tr>
+							<tr>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+							</tr>
+							<tr>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+							</tr>
+							<tr>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+							</tr>
+							<tr>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+							</tr>
+							<tr>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+							</tr>
+							<tr>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+							</tr>
+							<tr>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+							</tr>
+							<tr>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+							</tr>
+							
+							<tr>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+								<td>12232</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</main>
+	</div>
+	<footer>
+		
+	</footer>
+</body>
+</html>

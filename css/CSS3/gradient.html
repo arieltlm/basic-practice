@@ -1,0 +1,100 @@
+<!-- 渐变背景 -->
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8">
+<title>Gradient</title>
+<style type="text/css">
+	p{
+	width: 500px;
+	  height: 250px;
+	 text-align: center;
+	 line-height: 250px;
+	  font-size: 24px;
+	  color: #000;
+	  margin-left: 20px;
+	}
+	strong{
+		font-size: 30px;
+	}
+	.p1{
+	  background:linear-gradient(to top left,red,blue);
+	} 
+	.p2{
+		background: linear-gradient(0,red,blue);
+	}
+	.p3{
+		background: linear-gradient(30deg,red,blue);
+	}
+	.p4{
+		background: linear-gradient(to bottom,red 20%,blue 70%);
+	}
+	.p5{
+		background: linear-gradient(to bottom,red 40%,blue 60%);
+	}
+	.p6{
+		background: linear-gradient(to bottom,orange 0%,red 25%,yellow 50%,green 75%,black 100%);
+	}
+	/*%%%%%%%%%%%放射性渐变%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+	.p7{
+		background: radial-gradient(orange,green);
+	}
+	.p8{
+		background: radial-gradient(circle,orange,green);
+	}
+	.p9{
+		background: radial-gradient(at top left ,orange,green);
+	}
+	.p10{
+		background: radial-gradient(circle at center top,orange,green);
+	}
+	.p11{
+		background: radial-gradient( at 150px 50px,orange,green);
+	}
+	.p12{
+		background: radial-gradient(ellipse closest-side at 150px 30px,orange,green);
+	}
+	.p13{
+		background: radial-gradient(ellipse farthest-side at 150px 30px,orange,green);
+	}
+	.p14{
+		background: radial-gradient(ellipse closest-corner at 150px 30px,orange,green);
+	}
+	.p15{
+		background: radial-gradient(ellipse farthest-corner at 150px 30px,orange,green);
+	}
+	.p16{
+		background: radial-gradient(circle 95px at 150px 30px,orange,green);
+	}
+	.p17{
+		background: radial-gradient(ellipse 235px 95px at 150px 30px,orange,green);
+	}
+	.p18{
+		background: radial-gradient(circle 130px at 150px 30px,orange 0%,red 25%,yellow 50%,green 75%,blue);
+	}
+</style>
+</head> 
+<body>
+<strong>线性渐变：</strong>
+　　<p class="p1">右下角向左上角的线性渐变背景</p>
+　　<p class="p2">0度线性渐变背景</p>
+　　<p class="p3">30度的线性渐变背景</p>
+　　<p class="p4">自顶端往下20%处开始渐变到距底端30%处</p>
+　　<p class="p5">自顶端往下40%处开始渐变到距底端40%处</p>
+　　<p class="p6">多个渐变点</p>
+<strong>放射性渐变：</strong>
+　　<p class="p7">放射性渐变</p>
+　　<p class="p8">渐变呈圆形向外扩散</p>
+　　<p class="p9">从左上角开始扩散</p>
+　　<p class="p10">从元素顶部中央向下扩散</p>
+　　<p class="p11">指定渐变起点坐标</p>
+　　<p class="p12">渐变到离渐变起点最近的一条边</p>
+　　<p class="p13">渐变到离渐变起点最远的一条边</p>
+　　<p class="p14">渐变到离渐变起点最近的一个角</p>
+　　<p class="p15">渐变到离渐变起点最远的一个角</p>
+　　<p class="p16">圆形半径为95px</p>
+　　<p class="p17">椭圆形横向半径为235px，纵向为95px</p>
+　　<p class="p18">添加渐变中心点</p>
+　　
+</body>
+</html>
