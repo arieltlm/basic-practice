@@ -2,6 +2,8 @@
 
 *  16年慕课网上js进阶javascript学习
 *  domEvent
+### es6
+* es6入门第24章编码风格学习练习
 
 ##  2. css
 
