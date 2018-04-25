@@ -1,0 +1,102 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+html,body{
+	font-family:"微软雅黑";
+	height:100%;
+	width: 100%;
+	margin:0px;
+	overflow:hidden;
+	background-color:#67ace4 ;
+	}
+.clearfix{
+	clear:both;
+	}
+.bg-box{
+	width: 600px;
+	margin: 0 auto;
+	position: relative;
+	margin-top: 10%;
+}
+.bg-box img{
+	width: 600px;
+}
+.tishiqu{
+	width: 600px;
+	margin: 0 auto;
+	margin-top: 2%;
+	
+}
+.tishiw{
+	width: 250px;
+	font-size: 18px;
+	color: #fff;
+	line-height: 30px;
+	float: left;
+}
+.tishiw .yu{
+	border-bottom: 2px solid #fff;
+}
+.fanhui-f{
+	width:150px;
+	height: 40px;
+	border: 2px solid #fff;
+	float: left;
+	border-radius:55px;
+	text-align: center;
+	line-height: 40px;
+	font-size: 20px;
+	color: #fff;
+	cursor: pointer;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+.fanhui-s{
+	width:160px;
+	height: 40px;
+	border: 2px solid #fff;
+	float: left;
+	border-radius:55px;
+	text-align: center;
+	line-height: 40px;
+	font-size: 20px;
+	color: #fff;
+	cursor: pointer;
+	margin-top: 10px;
+	margin-left: 15px;
+}
+.fanhui-s:hover{
+	background: #FFFFff;
+	color:#67ace4 ;
+}
+.fanhui-f:hover{
+	background: #FFFFff;
+	color:#67ace4 ;
+}
+.bottom-box{
+	position:absolute;
+	width: 105%;
+	bottom: 0;
+	height: 35%;
+
+}
+.bottom-box .yun1{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	
+}
+.bottom-box .yun1 img{
+	width: 100%;
+}
+.bottom-box .yun2 img{
+	width: 100%;
+}
+.bottom-box .yun2 {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: -5%;
+}
