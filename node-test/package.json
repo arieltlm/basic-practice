@@ -1,0 +1,21 @@
+{
+  "name": "node-server",
+  "version": "1.0.0",
+  "description": "test server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tlm",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.4",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "multer": "^1.4.1",
+    "querystring": "^0.2.0",
+    "request": "^2.88.0"
+  }
+}
