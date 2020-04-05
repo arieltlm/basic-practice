@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>Document</title>
+	<script src="require.js" ></script>
+</head>
+<body>
+	<script>
+		console.log("before require");
+		require(['myModule1','myModule2'], function(m1, m2){         
+		    m1.say();
+		    m2.say();
+		});
+		console.log("after require");
+
+	</script>
+</body>
+</html>
+
