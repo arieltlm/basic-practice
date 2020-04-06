@@ -140,6 +140,13 @@ Object.fromEntries(new URLSearchParams('foo=bar&baz=qux')) // { foo: 'bar', baz:
 
 新增加一个基本数据类型Symbol，独一无二；
 
+[面试官：JavaScript 原始数据类型 Symbol 有什么用？](https://juejin.im/post/5e89ba2ee51d4547052cf2fa)
+
+* 拥有Symbol.iterator函数的对象被称为可迭代对象，可以在对象上使用for/of 循环。
+* 可以作为私有属性
+* JSON.stringify()会忽略symbol属性名和属性值 
+
+> 【tlm】时刻：这个实践还没用到过，理解还不透彻，后面再研究
 
 # 6.basic-es6
 
